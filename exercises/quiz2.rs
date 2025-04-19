@@ -39,14 +39,21 @@ mod my_module {
             // TODO: Complete the function body. You can do it!
             match command {
                 Command::Uppercase => {
-                    let mut str: String = "".into();
-                    
+                    let str: String = (&string).to_string().to_uppercase();
+                    output.push(str);
+
                 }
                 Command::Trim => {
+                    let str = (&string).to_string().trim_start().trim_end().to_string();
+                    output.push(str);
 
                 }
                 Command::Append(count) => {
-
+                    let mut str = (&string).to_string();
+                    for i in 0..(*count).into() {
+                        str += "bar"
+                    }
+                    output.push(str);
                 }
             }
         }
